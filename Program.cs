@@ -15,29 +15,28 @@ namespace TogbilletterOblig3
     {
         public static void Main(string[] args)
         {
-            var host = CreateWebHostBuilder(args);
-
-            //https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro#add-code-to-initialize-the-database-with-test-data
+            var host = CreateWebHostBuilder(args).Build();
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
+
                 try
                 {
-                    var dbContext = services.GetRequiredService<DB>();
-                    DBSeed.Seed(dbContext);
+                    var context = services.GetRequiredService<DB>();
+                    context.Database.EnsureCreated();
+                    DBSeed.Initialize(services); // INITIALISERER DATASEEDING HER
                 }
                 catch (Exception ex)
                 {
                     var logger = services.GetRequiredService<ILogger<Program>>();
-                    logger.LogError(ex, "An error occurred while seeding the database.");
+                    logger.LogError(ex, "An error occurred creating the DB.");
                 }
             }
-
             host.Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+                 WebHost.CreateDefaultBuilder(args)
+                     .UseStartup<Startup>();
     }
 }

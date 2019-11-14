@@ -22,10 +22,8 @@ namespace TogbilletterOblig3
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
-            // In production, the Angular files will be served from this directory
-            services.AddDbContext<DB>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("DB")));
+            services.AddDbContext<DB>(opts => opts.UseSqlServer(Configuration.GetConnectionString("FAQDB")));
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

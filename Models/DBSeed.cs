@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,12 +9,13 @@ namespace TogbilletterOblig3.Models
     public class DBSeed
     {
 
-        public static void Seed(DB dbContext)
+        public static void Initialize(IServiceProvider serviceProvider)
         {
+            var dbContext = serviceProvider.GetRequiredService<DB>();
             dbContext.Database.EnsureCreated();
 
-            
-             if (dbContext.Sporsmaler.Any())
+
+            if (dbContext.Sporsmaler.Any())
              {
                  return;
              }

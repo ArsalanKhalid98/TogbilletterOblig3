@@ -25,7 +25,7 @@ namespace TogbilletterOblig3.Models
 
     public class DB : DbContext
     {
-        public DB(DbContextOptions<DB> options)
+        public DB(DbContextOptions options)
         : base(options) { }
 
         //public DbSet<Kunde> Kunder { get; set; }
@@ -33,6 +33,9 @@ namespace TogbilletterOblig3.Models
 
         public DbSet<Sporsmal> Sporsmaler { get; set; }
         public DbSet<Svar> Svarer { get; set; }
+
+
+
     }
 
 
