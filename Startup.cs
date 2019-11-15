@@ -7,6 +7,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using TogbilletterOblig3.Models;
+using TogbilletterOblig3.Models.Repository;
+using TogbilletterOblig3.Models.DataManager;
 
 namespace TogbilletterOblig3
 {
@@ -23,6 +25,7 @@ namespace TogbilletterOblig3
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DB>(opts => opts.UseSqlServer(Configuration.GetConnectionString("FAQDB")));
+            services.AddScoped<IDataRepository<Sporsmal>, SporsmalManager>();
             services.AddControllers();
         }
 

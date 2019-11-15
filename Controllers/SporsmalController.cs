@@ -6,104 +6,90 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TogbilletterOblig3.Models;
 using TogbilletterOblig3;
+using TogbilletterOblig3.Models.Repository;
 
 namespace TogbilletterOblig3.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/sporsmal")]
     [ApiController]
-    public class SporsmalController : Controller
+    public class SporsmalController : ControllerBase
     {
-        private readonly DB db;
+        private readonly IDataRepository<Sporsmal> _dataRepository;
 
-        public SporsmalController(DB dbContext)
+        public SporsmalController(IDataRepository<Sporsmal> dataRepository)
         {
-            db = dbContext;
+            _dataRepository = dataRepository;
         }
 
-        [HttpGet("{id}")]
-        public JsonResult Get(int id)
-        {
-            var database = new DBFAQ(db);
-            var utSpørsmål = database.HentEttSpørsmål(id);
-
-            return Json(utSpørsmål);
-        }
-
-        /*
-        // GET: api/Sporsmals
+        // GET: api/Sporsmal
         [HttpGet]
-        public IEnumerable<Sporsmal> GetSporsmal()
+        public IActionResult Get()
         {
-            db.Add(new Sporsmal
-            {
-
-            });
-            db.SaveChanges();
-
-            return db.Sporsmaler;
+            IEnumerable<Sporsmal> sporsmaler = _dataRepository.GetAll();
+            return Ok(sporsmaler);
         }
 
-        // GET: api/Sporsmals/5
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetSporsmal([FromRoute] int id)
+        // GET: api/Sporsmal/5
+        [HttpGet("{id}", Name = "Get")]
+        public IActionResult Get(long id)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var sporsmal = await db.Sporsmaler.SingleOrDefaultAsync(m => m.ID == id);
+            Sporsmal sporsmal = _dataRepository.Get(id);
 
             if (sporsmal == null)
             {
-                return NotFound();
+                return NotFound("Sporsmal ble ikke funnet.");
             }
 
             return Ok(sporsmal);
         }
 
-        // POST: api/Sporsmals
+        // POST: api/Sporsmal
         [HttpPost]
-        public async Task<IActionResult> PostSporsmal([FromBody] Sporsmal sporsmal)
+        public IActionResult Post([FromBody] Sporsmal sporsmal)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            db.Sporsmaler.Add(sporsmal);
-            await db.SaveChangesAsync();
-
-            return CreatedAtAction("GetSporsmal", new { id = sporsmal.ID }, sporsmal);
-        }
-
-        // DELETE: api/Sporsmals/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteSporsmal([FromRoute] int id)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var sporsmal = await db.Sporsmaler.SingleOrDefaultAsync(m => m.ID == id);
             if (sporsmal == null)
             {
-                return NotFound();
+                return BadRequest("Sporsmal is null.");
             }
 
-            db.Sporsmaler.Remove(sporsmal);
-            await db.SaveChangesAsync();
-
-            return Ok(sporsmal);
+            _dataRepository.Add(sporsmal);
+            return CreatedAtRoute(
+                  "Get",
+                  new { Id = sporsmal.ID },
+                  sporsmal);
         }
 
-        private bool SporsmalExists(int id)
+        // PUT: api/Sporsmal/5
+        [HttpPut("{id}")]
+        public IActionResult Put(long id, [FromBody] Sporsmal sporsmal)
         {
-            return db.Sporsmaler.Any(e => e.ID == id);
+            if (sporsmal == null)
+            {
+                return BadRequest("Sporsmal er null.");
+            }
+
+            Sporsmal sporsmalToUpdate = _dataRepository.Get(id);
+            if (sporsmalToUpdate == null)
+            {
+                return NotFound("Sporsmal ble ikke funnet");
+            }
+
+            _dataRepository.Update(sporsmalToUpdate, sporsmal);
+            return NoContent();
         }
 
-    */
+        // DELETE: api/Sporsmal/5
+        [HttpDelete("{id}")]
+        public IActionResult Delete(long id)
+        {
+            Sporsmal sporsmal = _dataRepository.Get(id);
+            if (sporsmal == null)
+            {
+                return NotFound("Sporsmal ble ikke funnet");
+            }
 
+            _dataRepository.Delete(sporsmal);
+            return NoContent();
+        }
     }
 }
