@@ -36,6 +36,16 @@
     <Compile Remove="Migrations\20191115162358_FAQSporsmalAddedUpdated.Designer.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="ClientApp\src\app\services\sporsmal.service.ts" />
+    <None Remove="ClientApp\src\Models\Sporsmal.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\services\sporsmal.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\Models\Sporsmal.ts" />
+  </ItemGroup>
+
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">

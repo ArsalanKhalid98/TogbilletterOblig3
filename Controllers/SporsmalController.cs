@@ -23,6 +23,7 @@ namespace TogbilletterOblig3.Controllers
 
         // GET: api/Sporsmal
         [HttpGet]
+        [Route("getSporsmal")]
         public IActionResult Get()
         {
             IEnumerable<Sporsmal> sporsmaler = _dataRepository.GetAll();
@@ -30,10 +31,11 @@ namespace TogbilletterOblig3.Controllers
         }
 
         // GET: api/Sporsmal/5
-        [HttpGet("{id}", Name = "Get")]
-        public IActionResult Get(long id)
+        [HttpGet]
+        [Route("getSporsmalById")]
+        public IActionResult Get(long ID)
         {
-            Sporsmal sporsmal = _dataRepository.Get(id);
+            Sporsmal sporsmal = _dataRepository.Get(ID);
 
             if (sporsmal == null)
             {
@@ -45,6 +47,7 @@ namespace TogbilletterOblig3.Controllers
 
         // POST: api/Sporsmal
         [HttpPost]
+        [Route("Create")]
         public IActionResult Post([FromBody] Sporsmal sporsmal)
         {
             if (sporsmal == null)
@@ -61,6 +64,7 @@ namespace TogbilletterOblig3.Controllers
 
         // PUT: api/Sporsmal/5
         [HttpPut("{id}")]
+        [Route("Update")]
         public IActionResult Put(long id, [FromBody] Sporsmal sporsmal)
         {
             if (sporsmal == null)
@@ -80,6 +84,7 @@ namespace TogbilletterOblig3.Controllers
 
         // DELETE: api/Sporsmal/5
         [HttpDelete("{id}")]
+        [Route("Delete")]
         public IActionResult Delete(long id)
         {
             Sporsmal sporsmal = _dataRepository.Get(id);
