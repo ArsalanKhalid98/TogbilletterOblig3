@@ -5,11 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TogbilletterOblig3.Models;
+using TogbilletterOblig3;
 
 namespace TogbilletterOblig3.Controllers
 {
-    [Produces("application/json")]
-    [Route("api/sporsmal")]
+    [Route("api/[controller]")]
+    [ApiController]
     public class SporsmalController : Controller
     {
         private readonly DB db;
@@ -19,6 +20,16 @@ namespace TogbilletterOblig3.Controllers
             db = dbContext;
         }
 
+        [HttpGet("{id}")]
+        public JsonResult Get(int id)
+        {
+            var database = new DBFAQ(db);
+            var utSpørsmål = database.HentEttSpørsmål(id);
+
+            return Json(utSpørsmål);
+        }
+
+        /*
         // GET: api/Sporsmals
         [HttpGet]
         public IEnumerable<Sporsmal> GetSporsmal()
@@ -91,6 +102,8 @@ namespace TogbilletterOblig3.Controllers
         {
             return db.Sporsmaler.Any(e => e.ID == id);
         }
+
+    */
 
     }
 }

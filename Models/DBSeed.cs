@@ -11,7 +11,7 @@ namespace TogbilletterOblig3.Models
 
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            var dbContext = serviceProvider.GetRequiredService<DB>();
+            /*var dbContext = serviceProvider.GetRequiredService<DB>();
             dbContext.Database.EnsureCreated();
 
 
@@ -48,6 +48,7 @@ namespace TogbilletterOblig3.Models
             dbContext.Svarer.Add(svar2);
 
             dbContext.SaveChanges();
+            */
         }
 
     }
