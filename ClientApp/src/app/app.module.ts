@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { SporsmalComponent } from './FAQ/FAQ.component';
+import { stillSporsmalComponent } from './stillSporsmal/stillSporsmal.Component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SporsmalComponent } from './FAQ/FAQ.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    SporsmalComponent
+    SporsmalComponent,
+    stillSporsmalComponent
 
   ],
   imports: [
@@ -30,6 +32,7 @@ import { SporsmalComponent } from './FAQ/FAQ.component';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'FAQ', component: SporsmalComponent },
+      { path: 'stillSporsmal', component: stillSporsmalComponent },
     ])
   ],
   providers: [],
