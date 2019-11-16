@@ -9,8 +9,8 @@ using TogbilletterOblig3.Models;
 namespace TogbilletterOblig3.Migrations
 {
     [DbContext(typeof(DB))]
-    [Migration("20191116144057_IDAddedToSporsmal")]
-    partial class IDAddedToSporsmal
+    [Migration("20191116165545_FAQSporsmalNrAndStemmerAdded")]
+    partial class FAQSporsmalNrAndStemmerAdded
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,20 +27,20 @@ namespace TogbilletterOblig3.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("antallStemmer")
-                        .HasColumnType("int");
-
-                    b.Property<int>("iden")
-                        .HasColumnType("int");
-
-                    b.Property<int>("poeng")
-                        .HasColumnType("int");
-
                     b.Property<string>("sp")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("sporsmalNr")
+                        .HasColumnType("int");
+
                     b.Property<string>("svar")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("totalOppStemmer")
+                        .HasColumnType("int");
+
+                    b.Property<int>("totalStemmer")
+                        .HasColumnType("int");
 
                     b.HasKey("ID");
 
@@ -50,47 +50,47 @@ namespace TogbilletterOblig3.Migrations
                         new
                         {
                             ID = 1,
-                            antallStemmer = 0,
-                            iden = 1,
-                            poeng = 0,
                             sp = "Hvorfor går ikke toget fra stasjonen min?",
-                            svar = "Vi jobber hele tiden med å utvide tilbudet vårt. Beklager for eventuelle problemer."
+                            sporsmalNr = 1,
+                            svar = "Vi jobber hele tiden med å utvide tilbudet vårt. Beklager for eventuelle problemer.",
+                            totalOppStemmer = 0,
+                            totalStemmer = 0
                         },
                         new
                         {
                             ID = 2,
-                            antallStemmer = 0,
-                            iden = 2,
-                            poeng = 0,
                             sp = "Hvordan kjøper jeg billett?",
-                            svar = "Du kan gå inn på nettsiden vår og kjøpe billetter."
+                            sporsmalNr = 2,
+                            svar = "Du kan gå inn på nettsiden vår og kjøpe billetter.",
+                            totalOppStemmer = 0,
+                            totalStemmer = 0
                         },
                         new
                         {
                             ID = 3,
-                            antallStemmer = 0,
-                            iden = 3,
-                            poeng = 0,
                             sp = "Noe gikk galt med bestillingen min. Hva gjør jeg?",
-                            svar = "Du kan sende epost til oss på Togbillett@Kundeservice.no"
+                            sporsmalNr = 3,
+                            svar = "Du kan sende epost til oss på Togbillett@Kundeservice.no",
+                            totalOppStemmer = 0,
+                            totalStemmer = 0
                         },
                         new
                         {
                             ID = 4,
-                            antallStemmer = 0,
-                            iden = 4,
-                            poeng = 0,
                             sp = "Kan jeg ta med barnevogn?",
-                            svar = "Ja alle togene våres har mulighet for barnevogn."
+                            sporsmalNr = 4,
+                            svar = "Ja alle togene våres har mulighet for barnevogn.",
+                            totalOppStemmer = 0,
+                            totalStemmer = 0
                         },
                         new
                         {
                             ID = 5,
-                            antallStemmer = 0,
-                            iden = 5,
-                            poeng = 0,
                             sp = "Jeg ble trukket penger, men fikk ingen billett?",
-                            svar = "Send oss bilde av betalingen på epost, så skal vi fikse det."
+                            sporsmalNr = 5,
+                            svar = "Send oss bilde av betalingen på epost, så skal vi fikse det.",
+                            totalOppStemmer = 0,
+                            totalStemmer = 0
                         });
                 });
 #pragma warning restore 612, 618

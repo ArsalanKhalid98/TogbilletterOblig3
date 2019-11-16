@@ -37,8 +37,8 @@ namespace TogbilletterOblig3.Models.DataManager
         {
             sporsmal.sp = entity.sp;
             sporsmal.svar = entity.svar;
-            sporsmal.poeng = entity.poeng;
-            sporsmal.antallStemmer = entity.antallStemmer;
+            sporsmal.totalOppStemmer = entity.totalOppStemmer;
+            sporsmal.totalStemmer = entity.totalStemmer;
 
             db.SaveChanges();
         }

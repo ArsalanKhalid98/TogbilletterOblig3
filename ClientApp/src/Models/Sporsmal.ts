@@ -2,5 +2,7 @@ export class Sporsmal {
     ID: number;
     sp: string;
     poeng: number;
-    antallStemmer: number;
+    totalOppStemmer: number;
+    totalStemmer: number;
+    sporsmalNr: number;
 }

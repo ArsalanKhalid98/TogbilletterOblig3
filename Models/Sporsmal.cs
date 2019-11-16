@@ -14,8 +14,8 @@ namespace TogbilletterOblig3.Models
         public int ID { get; set; }
         public string sp { get; set; }
         public string svar { get; set; }
-        public int poeng { get; set; }
-        public int antallStemmer { get; set; }
-        public int iden { get; set; }
+        public int totalOppStemmer { get; set; }
+        public int totalStemmer { get; set; }
+        public int sporsmalNr { get; set; }
     }
 }

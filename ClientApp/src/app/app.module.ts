@@ -11,6 +11,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { SporsmalComponent } from './FAQ/FAQ.component';
 import { stillSporsmalComponent } from './stillSporsmal/stillSporsmal.Component';
+import { nyeSporsmalComponent } from './nyeSporsmal/nyeSporsmal.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { stillSporsmalComponent } from './stillSporsmal/stillSporsmal.Component'
     CounterComponent,
     FetchDataComponent,
     SporsmalComponent,
-    stillSporsmalComponent
+    stillSporsmalComponent,
+    nyeSporsmalComponent
 
   ],
   imports: [
@@ -33,9 +35,10 @@ import { stillSporsmalComponent } from './stillSporsmal/stillSporsmal.Component'
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'FAQ', component: SporsmalComponent },
       { path: 'stillSporsmal', component: stillSporsmalComponent },
+      { path: 'nyeSporsmal', component: nyeSporsmalComponent },
     ])
-  ],
-  providers: [],
+    ],
+    providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

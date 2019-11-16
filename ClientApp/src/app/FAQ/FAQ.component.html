@@ -12,17 +12,15 @@
       <th>ID</th>
       <th>Spørsmål</th>
       <th>Svar</th>
-      <th>Poeng</th>
-      <th>Antall stemmer</th>
+      <th>Nyttig?</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let sporsmal of sporsmalList">
-      <td>{{ sporsmal.iden }}</td>
+      <td>{{ sporsmal.sporsmalNr }}</td>
       <td>{{ sporsmal.sp }}</td>
       <td>{{ sporsmal.svar }}</td>
-      <td>{{ sporsmal.poeng }}</td>
-      <td>{{ sporsmal.antallStemmer }}</td>
+      <td>{{ sporsmal.totalOppStemmer }} av {{ sporsmal.totalStemmer }} syntes det var nyttig.</td>
       <td>
 
     </tr>

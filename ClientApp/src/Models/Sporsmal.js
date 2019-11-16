@@ -6,4 +6,4 @@ var Sporsmal = /** @class */ (function () {
     return Sporsmal;
 }());
 exports.Sporsmal = Sporsmal;
-//# sourceMappingURL=Sporsmal.js.map
+//# sourceMappingURL=sporsmal.js.map

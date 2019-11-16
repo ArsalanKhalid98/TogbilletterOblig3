@@ -37,6 +37,7 @@ namespace TogbilletterOblig3.Models
 
         public DbSet<Sporsmal> Sporsmaler { get; set; }
         //public DbSet<SporsmalOgSvar> SporsmalOgSvar { get; set; }
+        public DbSet<Kunde> Kunde { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -45,44 +46,44 @@ namespace TogbilletterOblig3.Models
                 ID = 1,
                 sp = "Hvorfor går ikke toget fra stasjonen min?",
                 svar = "Vi jobber hele tiden med å utvide tilbudet vårt. Beklager for eventuelle problemer.",
-                poeng = 0,
-                antallStemmer = 0,
-                iden = 1
+                totalOppStemmer = 0,
+                totalStemmer = 0,
+                sporsmalNr = 1
             }, new Sporsmal
             {
                 ID = 2,
                 sp = "Hvordan kjøper jeg billett?",
                 svar = "Du kan gå inn på nettsiden vår og kjøpe billetter.",
-                poeng = 0,
-                antallStemmer = 0,
-                iden = 2
+                totalOppStemmer = 0,
+                totalStemmer = 0,
+                sporsmalNr = 2
 
             }, new Sporsmal
             {
                 ID = 3,
                 sp = "Noe gikk galt med bestillingen min. Hva gjør jeg?",
                 svar = "Du kan sende epost til oss på Togbillett@Kundeservice.no",
-                poeng = 0,
-                antallStemmer = 0,
-                iden = 3
+                totalOppStemmer = 0,
+                totalStemmer = 0,
+                sporsmalNr = 3
 
             }, new Sporsmal
             {
                 ID = 4,
                 sp = "Kan jeg ta med barnevogn?",
                 svar = "Ja alle togene våres har mulighet for barnevogn.",
-                poeng = 0,
-                antallStemmer = 0,
-                iden = 4
+                totalOppStemmer = 0,
+                totalStemmer = 0,
+                sporsmalNr = 4
 
             }, new Sporsmal
             {
                 ID = 5,
                 sp = "Jeg ble trukket penger, men fikk ingen billett?",
                 svar = "Send oss bilde av betalingen på epost, så skal vi fikse det.",
-                poeng = 0,
-                antallStemmer = 0,
-                iden = 5
+                totalOppStemmer = 0,
+                totalStemmer = 0,
+                sporsmalNr = 5
 
             });
 

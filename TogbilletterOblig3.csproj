@@ -13,6 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="bootstrap" Version="4.3.1" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
@@ -38,6 +39,8 @@
     <Compile Remove="Migrations\20191115162358_FAQSporsmalAddedUpdated.Designer.cs" />
     <Compile Remove="Migrations\20191115163352_FAQSporsmalOgSvarUpdate.cs" />
     <Compile Remove="Migrations\20191115163352_FAQSporsmalOgSvarUpdate.Designer.cs" />
+    <Compile Remove="Migrations\20191116144057_IDAddedToSporsmal.cs" />
+    <Compile Remove="Migrations\20191116144057_IDAddedToSporsmal.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
