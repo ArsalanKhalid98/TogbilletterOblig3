@@ -13,8 +13,9 @@ namespace TogbilletterOblig3.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         public string sp { get; set; }
+        public string svar { get; set; }
         public int poeng { get; set; }
         public int antallStemmer { get; set; }
-        public List<Svar> svar { get; set; }
+        public int iden { get; set; }
     }
 }

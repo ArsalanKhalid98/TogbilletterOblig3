@@ -8,7 +8,7 @@ namespace TogbilletterOblig3.Models.DataManager
 {
     public class SporsmalManager : IDataRepository<Sporsmal>
     {
-        //readonly EmployeeContext _employeeContext;
+
         readonly DB db;
 
         public SporsmalManager(DB dbContext)
@@ -36,6 +36,7 @@ namespace TogbilletterOblig3.Models.DataManager
         public void Update(Sporsmal sporsmal, Sporsmal entity)
         {
             sporsmal.sp = entity.sp;
+            sporsmal.svar = entity.svar;
             sporsmal.poeng = entity.poeng;
             sporsmal.antallStemmer = entity.antallStemmer;
 

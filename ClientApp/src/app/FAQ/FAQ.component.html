@@ -1,6 +1,6 @@
-<h1>Sporsmal Data</h1>
+<h1>FAQ</h1>
 
-<p>This component demonstrates fetching Sporsmal data from the server.</p>
+<p>Dette er spørsmål som blir stilt ofte:</p>
 
 <p *ngIf="!sporsmalList"><em>Loading...</em></p>
 
@@ -11,18 +11,20 @@
     <tr>
       <th>ID</th>
       <th>Spørsmål</th>
+      <th>Svar</th>
       <th>Poeng</th>
       <th>Antall stemmer</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let sporsmal of sporsmalList">
-      <td>{{ sporsmal.ID }}</td>
+      <td>{{ sporsmal.iden }}</td>
       <td>{{ sporsmal.sp }}</td>
+      <td>{{ sporsmal.svar }}</td>
       <td>{{ sporsmal.poeng }}</td>
       <td>{{ sporsmal.antallStemmer }}</td>
       <td>
-      
+
     </tr>
   </tbody>
 </table>

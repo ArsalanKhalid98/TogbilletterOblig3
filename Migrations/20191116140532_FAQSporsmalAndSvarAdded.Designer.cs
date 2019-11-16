@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TogbilletterOblig3.Models;
 
 namespace TogbilletterOblig3.Migrations
 {
     [DbContext(typeof(DB))]
-    partial class DBModelSnapshot : ModelSnapshot
+    [Migration("20191116140532_FAQSporsmalAndSvarAdded")]
+    partial class FAQSporsmalAndSvarAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,9 +28,6 @@ namespace TogbilletterOblig3.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("antallStemmer")
-                        .HasColumnType("int");
-
-                    b.Property<int>("iden")
                         .HasColumnType("int");
 
                     b.Property<int>("poeng")
@@ -49,7 +48,6 @@ namespace TogbilletterOblig3.Migrations
                         {
                             ID = 1,
                             antallStemmer = 0,
-                            iden = 1,
                             poeng = 0,
                             sp = "Hvorfor går ikke toget fra stasjonen min?",
                             svar = "Vi jobber hele tiden med å utvide tilbudet vårt. Beklager for eventuelle problemer."
@@ -58,7 +56,6 @@ namespace TogbilletterOblig3.Migrations
                         {
                             ID = 2,
                             antallStemmer = 0,
-                            iden = 2,
                             poeng = 0,
                             sp = "Hvordan kjøper jeg billett?",
                             svar = "Du kan gå inn på nettsiden vår og kjøpe billetter."
@@ -67,7 +64,6 @@ namespace TogbilletterOblig3.Migrations
                         {
                             ID = 3,
                             antallStemmer = 0,
-                            iden = 3,
                             poeng = 0,
                             sp = "Noe gikk galt med bestillingen min. Hva gjør jeg?",
                             svar = "Du kan sende epost til oss på Togbillett@Kundeservice.no"
@@ -76,7 +72,6 @@ namespace TogbilletterOblig3.Migrations
                         {
                             ID = 4,
                             antallStemmer = 0,
-                            iden = 4,
                             poeng = 0,
                             sp = "Kan jeg ta med barnevogn?",
                             svar = "Ja alle togene våres har mulighet for barnevogn."
@@ -85,7 +80,6 @@ namespace TogbilletterOblig3.Migrations
                         {
                             ID = 5,
                             antallStemmer = 0,
-                            iden = 5,
                             poeng = 0,
                             sp = "Jeg ble trukket penger, men fikk ingen billett?",
                             svar = "Send oss bilde av betalingen på epost, så skal vi fikse det."
