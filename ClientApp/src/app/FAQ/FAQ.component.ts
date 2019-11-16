@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Sporsmal } from 'src/models/Sporsmal';
 import { SporsmalService } from '../services/sporsmal.service';
+import { Sporsmal } from 'src/models/sporsmal';
 
 @Component({
     selector: 'app-FAQ',
@@ -14,16 +14,16 @@ export class SporsmalComponent {
         this.getSporsmal();
     }
 
-    getEmployees() {
+    getSporsmal() {
         this._sporsmalService.getSporsmal().subscribe(
             (data: Sporsmal[]) => this.sporsmalList = data
         );
     }
 
-    delete(sporsmalID) {
-        const ans = confirm('Do you want to delete sporsmal with Id: ' + sporsmalID);
+    delete(ID) {
+        const ans = confirm('Do you want to delete sporsmal with Id: ' + ID);
         if (ans) {
-            this._sporsmalService.deleteSporsmal(sporsmalID).subscribe(() => {
+            this._sporsmalService.deleteSporsmal(ID).subscribe(() => {
                 this.getSporsmal();
             }, error => console.error(error));
         }

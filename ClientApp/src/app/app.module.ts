@@ -9,7 +9,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
-import { FAQComponent } from './FAQ/FAQ.component';
+import { SporsmalComponent } from './FAQ/FAQ.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { FAQComponent } from './FAQ/FAQ.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    FAQComponent
+    SporsmalComponent
 
   ],
   imports: [
@@ -29,7 +29,7 @@ import { FAQComponent } from './FAQ/FAQ.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'FAQ', component: FAQComponent },
+      { path: 'FAQ', component: SporsmalComponent },
     ])
   ],
   providers: [],
