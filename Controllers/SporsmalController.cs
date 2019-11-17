@@ -24,16 +24,16 @@ namespace TogbilletterOblig3.Controllers
         // GET: api/Sporsmal
         [HttpGet]
         [Route("getSporsmal")]
-        public IActionResult Get()
+        public IEnumerable<Sporsmal> Index()
         {
-            IEnumerable<Sporsmal> sporsmaler = _dataRepository.GetAll();
-            return Ok(sporsmaler);
+            return _dataRepository.GetAll();
         }
 
         // GET: api/Sporsmal/5
         [HttpGet]
-        [Route("getSporsmalById")]
-        public IActionResult Get(long ID)
+        //Muligens ID-delen som kræsjer programmet
+        [Route("getSporsmalById/{ID}")]
+        public IActionResult Get(int ID)
         {
             Sporsmal sporsmal = _dataRepository.Get(ID);
 
@@ -57,35 +57,30 @@ namespace TogbilletterOblig3.Controllers
 
             _dataRepository.Add(sporsmal);
             return CreatedAtRoute(
+
                   "Get",
                   new { Id = sporsmal.ID },
                   sporsmal);
+
         }
 
         // PUT: api/Sporsmal/5
-        [HttpPut("{id}")]
+        [HttpPut]
         [Route("Update")]
-        public IActionResult Put(long id, [FromBody] Sporsmal sporsmal)
+        public int Put(Sporsmal sporsmal)
         {
-            if (sporsmal == null)
-            {
-                return BadRequest("Sporsmal er null.");
-            }
 
-            Sporsmal sporsmalToUpdate = _dataRepository.Get(id);
-            if (sporsmalToUpdate == null)
-            {
-                return NotFound("Sporsmal ble ikke funnet");
-            }
+            Sporsmal sporsmalToUpdate = _dataRepository.Get(sporsmal.sporsmalNr);
+            
 
-            _dataRepository.Update(sporsmalToUpdate, sporsmal);
-            return NoContent();
+            return _dataRepository.Update(sporsmalToUpdate, sporsmal);
+
         }
 
         // DELETE: api/Sporsmal/5
-        [HttpDelete("{id}")]
+        [HttpDelete]
         [Route("Delete")]
-        public IActionResult Delete(long id)
+        public IActionResult Delete(int id)
         {
             Sporsmal sporsmal = _dataRepository.Get(id);
             if (sporsmal == null)

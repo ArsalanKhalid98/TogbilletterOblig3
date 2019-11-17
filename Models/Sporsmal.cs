@@ -10,7 +10,6 @@ namespace TogbilletterOblig3.Models
     public class Sporsmal
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         public string sp { get; set; }
         public string svar { get; set; }

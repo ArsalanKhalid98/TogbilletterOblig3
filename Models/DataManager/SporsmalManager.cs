@@ -21,10 +21,10 @@ namespace TogbilletterOblig3.Models.DataManager
             return db.Sporsmaler.ToList();
         }
 
-        public Sporsmal Get(long id)
+        // long eller int her?
+        public Sporsmal Get(int id)
         {
-            return db.Sporsmaler
-                  .FirstOrDefault(e => e.ID == id);
+            return db.Sporsmaler.FirstOrDefault(e => e.ID == id);
         }
 
         public void Add(Sporsmal entity)
@@ -33,7 +33,7 @@ namespace TogbilletterOblig3.Models.DataManager
             db.SaveChanges();
         }
 
-        public void Update(Sporsmal sporsmal, Sporsmal entity)
+        public int Update(Sporsmal sporsmal, Sporsmal entity)
         {
             sporsmal.sp = entity.sp;
             sporsmal.svar = entity.svar;
@@ -41,6 +41,7 @@ namespace TogbilletterOblig3.Models.DataManager
             sporsmal.totalStemmer = entity.totalStemmer;
 
             db.SaveChanges();
+            return 1;
         }
 
         public void Delete(Sporsmal sporsmal)

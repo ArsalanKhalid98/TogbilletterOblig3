@@ -1,0 +1,25 @@
+<h1>Recommend FAQ</h1>
+
+<p>Fant du svaret på dette spørsmålet nyttig?</p>
+<p *ngIf="!FAQ"><em>Loading...</em></p>
+<table class='table' *ngIf="FAQ">
+  <thead>
+    <tr>
+      <th>FAQId</th>
+      <th>Spørsmål</th>
+      <th>Svar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ sporsmal.sporsmalNr }}</td>
+      <td>{{ sporsmal.sp }}</td>
+      <td>{{ sporsmal.svar }}</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  <button class="btn btn-primary" (click)="saveAnbefaling()">Ja</button>
+  <button class="btn btn-primary" (click)="saveCount()">Nei</button>
+  <button class="btn btn-danger" (click)="cancel()">Cancel</button>
+</p>

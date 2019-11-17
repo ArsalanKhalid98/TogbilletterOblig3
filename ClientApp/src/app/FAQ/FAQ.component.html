@@ -13,15 +13,18 @@
       <th>Spørsmål</th>
       <th>Svar</th>
       <th>Nyttig?</th>
+      <th>Gi din mening</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let sporsmal of sporsmalList">
+
       <td>{{ sporsmal.sporsmalNr }}</td>
       <td>{{ sporsmal.sp }}</td>
       <td>{{ sporsmal.svar }}</td>
       <td>{{ sporsmal.totalOppStemmer }} av {{ sporsmal.totalStemmer }} syntes det var nyttig.</td>
-      <td>
+      <!--Denne linken kræsjer database-hentingen-->
+      <td><a [routerLink]="['/stemmeSporsmal/', FAQ.sporsmalNr]">Nyttig</a></td>
 
     </tr>
   </tbody>
