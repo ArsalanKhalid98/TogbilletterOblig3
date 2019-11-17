@@ -57,14 +57,6 @@ export class SporsmalService {
                 }));
     }
 
-    deleteSporsmal(ID: number) {
-        return this._http.delete(this.myAppUrl + 'api/sporsmal/Delete/' + ID)
-            .pipe(map(
-                response => {
-                    return response;
-                }));
-    }
-
 
     // For nye spørsmål sendt av kunder:
 

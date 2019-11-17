@@ -33,6 +33,7 @@ export class stemmeSporsmalComponent {
 
     }
 
+    //Endre navn her
     saveAnbefaling() {
         
             this.sporsmal.totalStemmer += 1;

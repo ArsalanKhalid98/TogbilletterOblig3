@@ -29,7 +29,7 @@ namespace TogbilletterOblig3.Controllers
             return _dataRepository.GetAllKunde();
         }
 
-        // GET: api/Sporsmal/5
+        // GET: api/Kunde/5
         [HttpGet]
         //Muligens ID-delen som kræsjer programmet
         [Route("GetKundeById/{ID}")]
@@ -45,7 +45,7 @@ namespace TogbilletterOblig3.Controllers
             return Ok(kunde);
         }
 
-        // POST: api/Sporsmal
+        // POST: api/Kunde
         // Denne kan være feilen
         [HttpPost]
         [Route("CreateKunde")]
@@ -53,7 +53,7 @@ namespace TogbilletterOblig3.Controllers
         {
             if (kunde == null)
             {
-                return BadRequest("Sporsmal is null.");
+                return BadRequest("Kunde is null.");
             }
 
             _dataRepository.AddKunde(kunde);
@@ -65,7 +65,7 @@ namespace TogbilletterOblig3.Controllers
 
         }
 
-        // PUT: api/Sporsmal/5
+        // PUT: api/Kunde/5
         [HttpPut]
         [Route("UpdateKunde")]
         public int Put(Kunde kunde)
@@ -78,7 +78,7 @@ namespace TogbilletterOblig3.Controllers
 
         }
 
-        // DELETE: api/Sporsmal/5
+        // DELETE: api/Kunde/5
         [HttpDelete]
         [Route("DeleteKunde")]
         public IActionResult Delete(int id)
@@ -86,7 +86,7 @@ namespace TogbilletterOblig3.Controllers
             Kunde kunde = _dataRepository.GetKunde(id);
             if (kunde == null)
             {
-                return NotFound("Sporsmal ble ikke funnet");
+                return NotFound("Kunde ble ikke funnet");
             }
 
             _dataRepository.DeleteKunde(kunde);

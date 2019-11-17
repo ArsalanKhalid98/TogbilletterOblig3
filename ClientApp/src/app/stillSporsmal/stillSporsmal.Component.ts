@@ -12,7 +12,6 @@ import { Kunde } from 'src/models/Kunde';
 export class stillSporsmalComponent {
 
     kundeForm: FormGroup;
-    title = "Create";
     KundeNr: number;
     errorMessage: any;
 
@@ -23,44 +22,22 @@ export class stillSporsmalComponent {
         }
 
         this.kundeForm = this._fb.group({
-            KundeNr: 0,
             Navn: ['', [Validators.required]],
             Epost: ['', [Validators.required]],
             Sporsmal: ['', [Validators.required]],
         })
     }
 
-    ngOnInit() {
-        
-
-        if (this.KundeNr > 0) {
-            this.title = 'Edit';
-            this._sporsmalService.GetKundeById(this.KundeNr)
-                .subscribe((response: Kunde) => {
-                    this.kundeForm.setValue(response);
-                }, error => console.error(error));
-        }
-    }
 
     save() {
-
         if (!this.kundeForm.valid) {
             return;
         }
-
-        if (this.title === 'Create') {
             this._sporsmalService.SaveKunde(this.kundeForm.value)
                 .subscribe(() => {
                     // Feil navigate
                     this._router.navigate(['/FAQ']);
                 }, error => console.error(error));
-        } else if (this.title === 'Edit') {
-            this._sporsmalService.UpdateKunde(this.kundeForm.value)
-                .subscribe(() => {
-                    // Feil navigate
-                    this._router.navigate(['/FAQ']);
-                }, error => console.error(error));
-        }
     }
 
     get Navn() { return this.kundeForm.get('Navn'); }

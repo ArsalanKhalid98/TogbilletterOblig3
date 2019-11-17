@@ -20,12 +20,5 @@ export class SporsmalComponent {
         );
     }
 
-    delete(ID) {
-        const ans = confirm('Do you want to delete sporsmal with Id: ' + ID);
-        if (ans) {
-            this._sporsmalService.deleteSporsmal(ID).subscribe(() => {
-                this.getSporsmal();
-            }, error => console.error(error));
-        }
-    }
+    
 }

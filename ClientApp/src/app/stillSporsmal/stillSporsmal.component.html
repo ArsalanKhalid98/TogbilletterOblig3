@@ -1,11 +1,11 @@
 
 
-  <h2 class="h1-responsive font-weight-bold text-center my-5">Kontakt oss</h2>
-  <form [formGroup]="kundeForm" class="text-center" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+  <h2 class="h1-responsive font-weight-bold my-5">Kontakt oss</h2>
+  <form [formGroup]="kundeForm" class="text-center " (ngSubmit)="save()" #formDir="ngForm" novalidate>
 
 
-    <div class="form-group row">
-      <div class="col-md-6">
+    <div class="form-group row" >
+      <div class="col-md-4">
         <div class="md-form">
           <input type="text" id="Navn" class="form-control" placeholder="Ditt navn" formControlName="Navn">
         </div>
@@ -14,7 +14,7 @@
     </div>
 
     <div class="form-group row">
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div class="md-form">
           <input type="text" id="Epost" class="form-control" placeholder="Din epost" formControlName="Epost">
         </div>
@@ -22,16 +22,18 @@
     </div>
 
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div class="md-form">
           <textarea type="text" id="Sporsmal" class="form-control md-textarea" placeholder="Ditt spørsmål" formControlName="Sporsmal"></textarea>
         </div>
       </div>
     </div>
 
-
+    <br />
     <div class="form-group row">
-      <button type="submit" class=" btn btn-primary">Save</button>
+      <div class="col-md-4">
+        <button type="submit" class=" btn btn-primary">Send inn</button>
+      </div>
     </div>
 
 

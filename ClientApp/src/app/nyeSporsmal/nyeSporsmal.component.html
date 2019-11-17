@@ -9,8 +9,7 @@
 <table class='table' *ngIf="kundeList">
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Navn</th>
+      <th>Stilt av</th>
       <th>Epost</th>
       <th>Spørsmål</th>
     </tr>
@@ -18,7 +17,6 @@
   <tbody>
     <tr *ngFor="let kunde of kundeList">
 
-      <td>{{ kunde.kundeNr }}</td>
       <td>{{ kunde.navn }}</td>
       <td>{{ kunde.epost }}</td>
       <td>{{ kunde.sporsmal }}</td>
