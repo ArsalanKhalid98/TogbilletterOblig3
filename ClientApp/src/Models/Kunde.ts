@@ -3,5 +3,5 @@ export class Kunde {
     navn: string;
     epost: string;
     sporsmal: string;
-    KundeNr: number;
+    kundeNr: number;
 }

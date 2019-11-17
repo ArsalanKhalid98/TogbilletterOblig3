@@ -87,6 +87,22 @@ namespace TogbilletterOblig3.Models
 
             });
 
+            modelBuilder.Entity<Kunde>().HasData(new Kunde
+            {
+                ID = 1,
+                Navn = "Elias Larsen",
+                Epost = "EliasKul123@gmail.com",
+                Sporsmal = "Hei, har dere planer om å få større toaletter på toget?",
+                KundeNr = 1
+            }, new Kunde
+            {
+                ID = 2,
+                Navn = "Jørgen Letnes",
+                Epost = "JørgenLetnes@outlook.com",
+                Sporsmal = "Når får dere flere avganger fra Trondheim",
+                KundeNr = 2
+            });
+
         }
 
 

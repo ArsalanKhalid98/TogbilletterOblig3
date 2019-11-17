@@ -21,6 +21,16 @@ namespace TogbilletterOblig3.Migrations
                 {
                     table.PrimaryKey("PK_Kunde", x => x.ID);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Kunde",
+                columns: new[] { "ID", "Epost", "KundeNr", "Navn", "Sporsmal" },
+                values: new object[] { 1, "EliasKul123@gmail.com", 1, "Elias Larsen", "Hei, har dere planer om å få større toaletter på toget?" });
+
+            migrationBuilder.InsertData(
+                table: "Kunde",
+                columns: new[] { "ID", "Epost", "KundeNr", "Navn", "Sporsmal" },
+                values: new object[] { 2, "JørgenLetnes@outlook.com", 2, "Jørgen Letnes", "Når får dere flere avganger fra Trondheim" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

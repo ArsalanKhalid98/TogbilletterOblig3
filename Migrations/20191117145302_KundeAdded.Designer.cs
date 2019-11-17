@@ -9,7 +9,7 @@ using TogbilletterOblig3.Models;
 namespace TogbilletterOblig3.Migrations
 {
     [DbContext(typeof(DB))]
-    [Migration("20191117135219_KundeAdded")]
+    [Migration("20191117145302_KundeAdded")]
     partial class KundeAdded
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,6 +45,24 @@ namespace TogbilletterOblig3.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Kunde");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Epost = "EliasKul123@gmail.com",
+                            KundeNr = 1,
+                            Navn = "Elias Larsen",
+                            Sporsmal = "Hei, har dere planer om å få større toaletter på toget?"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            Epost = "JørgenLetnes@outlook.com",
+                            KundeNr = 2,
+                            Navn = "Jørgen Letnes",
+                            Sporsmal = "Når får dere flere avganger fra Trondheim"
+                        });
                 });
 
             modelBuilder.Entity("TogbilletterOblig3.Models.Sporsmal", b =>

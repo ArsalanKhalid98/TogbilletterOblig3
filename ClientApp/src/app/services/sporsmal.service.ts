@@ -2,7 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Sporsmal } from 'src/models/sporsmal';
-import { Kunde } from '../../models/Kunde';
+import { Kunde } from 'src/models/Kunde';
 
 
 @Injectable({

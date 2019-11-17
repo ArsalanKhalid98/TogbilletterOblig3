@@ -2,27 +2,26 @@
 
 <p>Dette er spørsmål som blir stilt ofte:</p>
 
-<p *ngIf="!KundeList"><em>Loading...</em></p>
+<p *ngIf="!kundeList"><em>Loading...</em></p>
 
 
 
-<table class='table' *ngIf="KundeList">
+<table class='table' *ngIf="kundeList">
   <thead>
     <tr>
       <th>ID</th>
+      <th>Navn</th>
+      <th>Epost</th>
       <th>Spørsmål</th>
-      <th>Svar</th>
-      <th>Nyttig?</th>
-      <th>Gi din mening</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let kunde of KundeList">
+    <tr *ngFor="let kunde of kundeList">
 
-      <td>{{ sporsmal.KundeNr }}</td>
-      <td>{{ kunde.Navn }}</td>
-      <td>{{ kunde.Epost }}</td>
-      <td>{{ kunde.Sporsmal }}</td>
+      <td>{{ kunde.kundeNr }}</td>
+      <td>{{ kunde.navn }}</td>
+      <td>{{ kunde.epost }}</td>
+      <td>{{ kunde.sporsmal }}</td>
       <!--Denne linken kræsjer database-hentingen-->
 
     </tr>
