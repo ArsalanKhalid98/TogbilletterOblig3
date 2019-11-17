@@ -1,9 +1,9 @@
 <header>
   <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
+    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary border-bottom box-shadow mb-3"
   >
     <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">TogbilletterOblig3</a>
+      <a class="navbar-brand" [routerLink]="['/']">Kundeservice</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -23,19 +23,19 @@
           <li class="nav-item"
               [routerLinkActive]="['link-active']"
               [routerLinkActiveOptions]="{ exact: true }">
-            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+            <a class="nav-link text-white" [routerLink]="['/']">Home</a>
           </li>
 
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/FAQ']">FAQ</a>
+            <a class="nav-link text-white" [routerLink]="['/FAQ']">FAQ</a>
           </li>
 
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/stillSporsmal']">Still spørsmål</a>
+            <a class="nav-link text-white" [routerLink]="['/stillSporsmal']">Still spørsmål</a>
           </li>
 
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/nyeSporsmal']">Nye spørsmål</a>
+            <a class="nav-link text-white" [routerLink]="['/nyeSporsmal']">Nye spørsmål</a>
           </li>
 
         </ul>

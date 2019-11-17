@@ -12,10 +12,8 @@ namespace TogbilletterOblig3.Models
         [Key]
         public int ID { get; set; }
         [Required]
-        [RegularExpression("^[a-zA-ZøæåØÆÅ\\-. ?]{1,100}$")]
         public string sp { get; set; }
         [Required]
-        [RegularExpression("^[a-zA-ZøæåØÆÅ\\-. ?]{1,100}$")]
         public string svar { get; set; }
         public int totalOppStemmer { get; set; }
         public int totalStemmer { get; set; }

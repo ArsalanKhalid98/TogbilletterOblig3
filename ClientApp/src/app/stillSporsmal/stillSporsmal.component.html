@@ -1,5 +1,3 @@
-
-
   <h2 class="h1-responsive font-weight-bold my-5">Kontakt oss</h2>
   <form [formGroup]="kundeForm" class="text-center " (ngSubmit)="save()" #formDir="ngForm" novalidate>
 
@@ -7,7 +5,7 @@
     <div class="form-group row" >
       <div class="col-md-4">
         <div class="md-form">
-          <input type="text" id="Navn" class="form-control" placeholder="Ditt navn" formControlName="Navn">
+          <input type="text" id="Navn" class="form-control" placeholder="Ditt navn" formControlName="Navn" ngModel pattern="[a-zA-Z ]*" required minlength="2">
         </div>
       </div>
 
@@ -16,7 +14,7 @@
     <div class="form-group row">
       <div class="col-md-4">
         <div class="md-form">
-          <input type="text" id="Epost" class="form-control" placeholder="Din epost" formControlName="Epost">
+          <input type="email" id="Epost" class="form-control" placeholder="Din epost" formControlName="Epost" ngModel email="true">
         </div>
       </div>
     </div>
@@ -38,5 +36,6 @@
 
 
   </form>
+
 
 <!-- Section: Contact v.2 -->

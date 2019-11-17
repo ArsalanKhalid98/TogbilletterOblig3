@@ -24,7 +24,7 @@
       <td>{{ sporsmal.svar }}</td>
       <td>{{ sporsmal.totalOppStemmer }} av {{ sporsmal.totalStemmer }} syntes det var nyttig.</td>
       <!--Denne linken kræsjer database-hentingen-->
-      <td><a [routerLink]="['/stemmeSporsmal/', sporsmal.sporsmalNr]">Nyttig</a></td>
+      <td><a [routerLink]="['/stemmeSporsmal/', sporsmal.sporsmalNr]">Upvote/Downvote</a></td>
 
     </tr>
   </tbody>

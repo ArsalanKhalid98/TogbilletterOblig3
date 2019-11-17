@@ -24,7 +24,6 @@ namespace TogbilletterOblig3
                 {
                     var context = services.GetRequiredService<DB>();
                     context.Database.EnsureCreated();
-                    DBSeed.Initialize(services); // INITIALISERER DATASEEDING HER
                 }
                 catch (Exception ex)
                 {
