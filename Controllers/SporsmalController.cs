@@ -46,7 +46,6 @@ namespace TogbilletterOblig3.Controllers
         }
 
         // POST: api/Sporsmal
-        // Denne kan være feilen
         [HttpPost]
         [Route("Create")]
         public IActionResult Post([FromBody] Sporsmal sporsmal)

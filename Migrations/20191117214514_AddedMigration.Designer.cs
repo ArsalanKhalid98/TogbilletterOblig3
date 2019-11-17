@@ -9,8 +9,8 @@ using TogbilletterOblig3.Models;
 namespace TogbilletterOblig3.Migrations
 {
     [DbContext(typeof(DB))]
-    [Migration("20191116165545_FAQSporsmalNrAndStemmerAdded")]
-    partial class FAQSporsmalNrAndStemmerAdded
+    [Migration("20191117214514_AddedMigration")]
+    partial class AddedMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,51 @@ namespace TogbilletterOblig3.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("TogbilletterOblig3.Models.Kunde", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Epost")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("KundeNr")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Navn")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Sporsmal")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Kunde");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Epost = "EliasKul123@gmail.com",
+                            KundeNr = 1,
+                            Navn = "Elias Larsen",
+                            Sporsmal = "Hei, har dere planer om å få større toaletter på toget?"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            Epost = "JørgenLetnes@outlook.com",
+                            KundeNr = 2,
+                            Navn = "Jørgen Letnes",
+                            Sporsmal = "Når får dere flere avganger fra Trondheim"
+                        });
+                });
+
             modelBuilder.Entity("TogbilletterOblig3.Models.Sporsmal", b =>
                 {
                     b.Property<int>("ID")
@@ -28,12 +73,14 @@ namespace TogbilletterOblig3.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("sp")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("sporsmalNr")
                         .HasColumnType("int");
 
                     b.Property<string>("svar")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("totalOppStemmer")

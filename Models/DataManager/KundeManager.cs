@@ -43,10 +43,5 @@ namespace TogbilletterOblig3.Models.DataManager
             return 1;
         }
 
-        public void DeleteKunde(Kunde kunde)
-        {
-            db.Kunde.Remove(kunde);
-            db.SaveChanges();
-        }
     }
 }

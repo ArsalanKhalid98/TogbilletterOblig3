@@ -11,6 +11,5 @@ namespace TogbilletterOblig3.Models.Repository
         TEntity GetKunde(int id);
         void AddKunde(TEntity entity);
         int UpdateKunde(TEntity dbEntity, TEntity entity);
-        void DeleteKunde(TEntity entity);
     }
 }

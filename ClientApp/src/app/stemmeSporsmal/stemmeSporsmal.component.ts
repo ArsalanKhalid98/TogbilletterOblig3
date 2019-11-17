@@ -31,7 +31,7 @@ export class stemmeSporsmalComponent {
 
     }
 
-    // Upvote og downvote av svar
+    // Upvote og downvote av svar //
     Upvote() {
         
             this.sporsmal.totalStemmer += 1;

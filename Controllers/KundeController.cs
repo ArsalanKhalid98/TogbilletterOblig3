@@ -31,7 +31,6 @@ namespace TogbilletterOblig3.Controllers
 
         // GET: api/Kunde/5
         [HttpGet]
-        //Muligens ID-delen som kræsjer programmet
         [Route("GetKundeById/{ID}")]
         public IActionResult Get(int ID)
         {
@@ -46,7 +45,6 @@ namespace TogbilletterOblig3.Controllers
         }
 
         // POST: api/Kunde
-        // Denne kan være feilen
         [HttpPost]
         [Route("CreateKunde")]
         public int Post([FromBody] Kunde kunde)
@@ -73,20 +71,5 @@ namespace TogbilletterOblig3.Controllers
 
         }
 
-        //FJERN DENNE
-        // DELETE: api/Kunde/5
-        [HttpDelete]
-        [Route("DeleteKunde")]
-        public IActionResult Delete(int id)
-        {
-            Kunde kunde = _dataRepository.GetKunde(id);
-            if (kunde == null)
-            {
-                return NotFound("Kunde ble ikke funnet");
-            }
-
-            _dataRepository.DeleteKunde(kunde);
-            return NoContent();
-        }
     }
 }

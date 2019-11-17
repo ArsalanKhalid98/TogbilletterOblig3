@@ -33,7 +33,6 @@ export class stillSporsmalComponent {
         }
             this._sporsmalService.SaveKunde(this.kundeForm.value)
                 .subscribe(() => {
-                    // Feil navigate
                     this._router.navigate(['/nyeSporsmal']);
                 }, error => console.error(error));
     }

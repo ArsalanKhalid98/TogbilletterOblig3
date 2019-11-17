@@ -9,8 +9,8 @@ using TogbilletterOblig3.Models;
 namespace TogbilletterOblig3.Migrations
 {
     [DbContext(typeof(DB))]
-    [Migration("20191117145302_KundeAdded")]
-    partial class KundeAdded
+    [Migration("20191117214438_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -73,12 +73,14 @@ namespace TogbilletterOblig3.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("sp")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("sporsmalNr")
                         .HasColumnType("int");
 
                     b.Property<string>("svar")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("totalOppStemmer")

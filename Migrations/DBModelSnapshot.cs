@@ -71,12 +71,14 @@ namespace TogbilletterOblig3.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("sp")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("sporsmalNr")
                         .HasColumnType("int");
 
                     b.Property<string>("svar")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("totalOppStemmer")
