@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -31,6 +31,7 @@ import { stemmeSporsmalComponent } from './stemmeSporsmal/stemmeSporsmal.compone
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
@@ -38,7 +39,7 @@ import { stemmeSporsmalComponent } from './stemmeSporsmal/stemmeSporsmal.compone
       { path: 'FAQ', component: SporsmalComponent },
       { path: 'stillSporsmal', component: stillSporsmalComponent },
       { path: 'nyeSporsmal', component: nyeSporsmalComponent },
-      { path: 'stemmeSporsmal', component: stemmeSporsmalComponent },
+      { path: 'stemmeSporsmal/:ID', component: stemmeSporsmalComponent },
 
     ])
     ],

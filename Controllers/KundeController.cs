@@ -10,86 +10,86 @@ using TogbilletterOblig3.Models.Repository;
 
 namespace TogbilletterOblig3.Controllers
 {
-    [Route("api/sporsmal")]
+    [Route("api/kunde")]
     [ApiController]
-    public class SporsmalController : ControllerBase
+    public class KundeController : ControllerBase
     {
-        private readonly IDataRepository<Sporsmal> _dataRepository;
+        private readonly IDataRepositoryKunde<Kunde> _dataRepository;
 
-        public SporsmalController(IDataRepository<Sporsmal> dataRepository)
+        public KundeController(IDataRepositoryKunde<Kunde> dataRepository)
         {
             _dataRepository = dataRepository;
         }
 
         // GET: api/Sporsmal
         [HttpGet]
-        [Route("getSporsmal")]
-        public IEnumerable<Sporsmal> Index()
+        [Route("GetKunde")]
+        public IEnumerable<Kunde> Index()
         {
-            return _dataRepository.GetAll();
+            return _dataRepository.GetAllKunde();
         }
 
         // GET: api/Sporsmal/5
         [HttpGet]
         //Muligens ID-delen som kræsjer programmet
-        [Route("getSporsmalById/{ID}")]
+        [Route("GetKundeById/{ID}")]
         public IActionResult Get(int ID)
         {
-            Sporsmal sporsmal = _dataRepository.Get(ID);
+            Kunde kunde = _dataRepository.GetKunde(ID);
 
-            if (sporsmal == null)
+            if (kunde == null)
             {
                 return NotFound("Sporsmal ble ikke funnet.");
             }
 
-            return Ok(sporsmal);
+            return Ok(kunde);
         }
 
         // POST: api/Sporsmal
         // Denne kan være feilen
         [HttpPost]
-        [Route("Create")]
-        public IActionResult Post([FromBody] Sporsmal sporsmal)
+        [Route("CreateKunde")]
+        public IActionResult Post([FromBody] Kunde kunde)
         {
-            if (sporsmal == null)
+            if (kunde == null)
             {
                 return BadRequest("Sporsmal is null.");
             }
 
-            _dataRepository.Add(sporsmal);
+            _dataRepository.AddKunde(kunde);
             return CreatedAtRoute(
 
                   "Get",
-                  new { Id = sporsmal.ID },
-                  sporsmal);
+                  new { Id = kunde.ID },
+                  kunde);
 
         }
 
         // PUT: api/Sporsmal/5
         [HttpPut]
-        [Route("Update")]
-        public int Put(Sporsmal sporsmal)
+        [Route("UpdateKunde")]
+        public int Put(Kunde kunde)
         {
 
-            Sporsmal sporsmalToUpdate = _dataRepository.Get(sporsmal.sporsmalNr);
-            
+            Kunde kundeToUpdate = _dataRepository.GetKunde(kunde.KundeNr);
 
-            return _dataRepository.Update(sporsmalToUpdate, sporsmal);
+
+            return _dataRepository.UpdateKunde(kundeToUpdate, kunde);
 
         }
 
         // DELETE: api/Sporsmal/5
         [HttpDelete]
-        [Route("Delete")]
+        [Route("DeleteKunde")]
         public IActionResult Delete(int id)
         {
-            Sporsmal sporsmal = _dataRepository.Get(id);
-            if (sporsmal == null)
+            Kunde kunde = _dataRepository.GetKunde(id);
+            if (kunde == null)
             {
                 return NotFound("Sporsmal ble ikke funnet");
             }
 
-            _dataRepository.Delete(sporsmal);
+            _dataRepository.DeleteKunde(kunde);
             return NoContent();
         }
     }

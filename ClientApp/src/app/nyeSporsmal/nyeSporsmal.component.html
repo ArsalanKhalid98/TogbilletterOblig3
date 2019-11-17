@@ -1,1 +1,30 @@
-<h1>Hallo trøtt</h1>
+<h1>Kunder</h1>
+
+<p>Dette er spørsmål som blir stilt ofte:</p>
+
+<p *ngIf="!KundeList"><em>Loading...</em></p>
+
+
+
+<table class='table' *ngIf="KundeList">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Spørsmål</th>
+      <th>Svar</th>
+      <th>Nyttig?</th>
+      <th>Gi din mening</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let kunde of KundeList">
+
+      <td>{{ sporsmal.KundeNr }}</td>
+      <td>{{ kunde.Navn }}</td>
+      <td>{{ kunde.Epost }}</td>
+      <td>{{ kunde.Sporsmal }}</td>
+      <!--Denne linken kræsjer database-hentingen-->
+
+    </tr>
+  </tbody>
+</table>

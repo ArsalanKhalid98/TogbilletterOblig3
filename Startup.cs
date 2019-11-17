@@ -26,6 +26,7 @@ namespace TogbilletterOblig3
         {
             services.AddDbContext<DB>(opts => opts.UseSqlServer(Configuration.GetConnectionString("FAQDB")));
             services.AddScoped<IDataRepository<Sporsmal>, SporsmalManager>();
+            services.AddScoped<IDataRepositoryKunde<Kunde>, KundeManager>();
             services.AddControllers();
         }
 

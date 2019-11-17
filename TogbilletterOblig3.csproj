@@ -41,6 +41,8 @@
     <Compile Remove="Migrations\20191115163352_FAQSporsmalOgSvarUpdate.Designer.cs" />
     <Compile Remove="Migrations\20191116144057_IDAddedToSporsmal.cs" />
     <Compile Remove="Migrations\20191116144057_IDAddedToSporsmal.Designer.cs" />
+    <Compile Remove="Migrations\20191117130719_KundeAdded.cs" />
+    <Compile Remove="Migrations\20191117130719_KundeAdded.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace TogbilletterOblig3.Models
 {
-    public class Kunde
+    public class kategori
     {
         public int ID { get; set; }
         [Required]
-        public string Navn { get; set; }
-        [Required]
-        public string Epost { get; set; }
-        [Required]
-        public string Sporsmal { get; set; }
-        public int KundeNr { get; set; }
+        [RegularExpression("^[a-zæøåA-ZÆØÅ. \\-]{2,30}$")]
+        public string navn { get; set; }
+        public List<Sporsmal> sp { get; set; }
     }
 }

@@ -24,7 +24,7 @@ namespace TogbilletterOblig3.Models.DataManager
         // long eller int her?
         public Sporsmal Get(int id)
         {
-            return db.Sporsmaler.FirstOrDefault(e => e.ID == id);
+            return db.Sporsmaler.FirstOrDefault(e => e.sporsmalNr == id);
         }
 
         public void Add(Sporsmal entity)

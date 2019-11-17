@@ -14,11 +14,11 @@ export class stemmeSporsmalComponent {
     sporsmalNr: number;
     errorMessage: any;
 
-    constructor(private _sporsmalService: SporsmalService, private _avRoute: ActivatedRoute, private _router: Router)
+    constructor(private _avRoute: ActivatedRoute, private _sporsmalService: SporsmalService, private _router: Router)
     {
 
-        if (this._avRoute.snapshot.params['id']) {
-            this.sporsmalNr = this._avRoute.snapshot.params['id'];
+        if (this._avRoute.snapshot.params['ID']) {
+            this.sporsmalNr = this._avRoute.snapshot.params['ID'];
             this.getSporsmalByNr(this.sporsmalNr);
         }
     }
