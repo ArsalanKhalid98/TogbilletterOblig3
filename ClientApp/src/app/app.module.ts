@@ -7,8 +7,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { SporsmalComponent } from './FAQ/FAQ.component';
 import { stillSporsmalComponent } from './stillSporsmal/stillSporsmal.Component';
 import { nyeSporsmalComponent } from './nyeSporsmal/nyeSporsmal.component';
@@ -19,8 +17,6 @@ import { stemmeSporsmalComponent } from './stemmeSporsmal/stemmeSporsmal.compone
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
     SporsmalComponent,
     stillSporsmalComponent,
     nyeSporsmalComponent,
@@ -34,8 +30,6 @@ import { stemmeSporsmalComponent } from './stemmeSporsmal/stemmeSporsmal.compone
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
       { path: 'FAQ', component: SporsmalComponent },
       { path: 'stillSporsmal', component: stillSporsmalComponent },
       { path: 'nyeSporsmal', component: nyeSporsmalComponent },

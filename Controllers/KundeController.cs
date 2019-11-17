@@ -49,20 +49,15 @@ namespace TogbilletterOblig3.Controllers
         // Denne kan være feilen
         [HttpPost]
         [Route("CreateKunde")]
-        public IActionResult Post([FromBody] Kunde kunde)
+        public int Post([FromBody] Kunde kunde)
         {
             if (kunde == null)
             {
-                return BadRequest("Kunde is null.");
+                return 0;
             }
 
             _dataRepository.AddKunde(kunde);
-            return CreatedAtRoute(
-
-                  "Get",
-                  new { Id = kunde.ID },
-                  kunde);
-
+            return 1;
         }
 
         // PUT: api/Kunde/5
@@ -78,6 +73,7 @@ namespace TogbilletterOblig3.Controllers
 
         }
 
+        //FJERN DENNE
         // DELETE: api/Kunde/5
         [HttpDelete]
         [Route("DeleteKunde")]

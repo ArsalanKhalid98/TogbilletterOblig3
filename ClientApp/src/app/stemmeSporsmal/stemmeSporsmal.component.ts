@@ -9,8 +9,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class stemmeSporsmalComponent {
 
-    //Endre litt?
-    title = 'Recommend';
     sporsmalNr: number;
     errorMessage: any;
 
@@ -33,8 +31,8 @@ export class stemmeSporsmalComponent {
 
     }
 
-    //Endre navn her
-    saveAnbefaling() {
+    // Upvote og downvote av svar
+    Upvote() {
         
             this.sporsmal.totalStemmer += 1;
             this.sporsmal.totalOppStemmer += 1;
@@ -48,7 +46,7 @@ export class stemmeSporsmalComponent {
 
     }
 
-    saveCount() {
+    DownVote() {
         this.sporsmal.totalStemmer += 1;
         this.sporsmal.sporsmalNr = this.sporsmal.sporsmalNr;
         this._sporsmalService.updateSporsmal(this.sporsmal)

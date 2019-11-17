@@ -17,9 +17,7 @@ export class stillSporsmalComponent {
 
     constructor(private _fb: FormBuilder, private _avRoute: ActivatedRoute,
         private _sporsmalService: SporsmalService, private _router: Router) {
-        if (this._avRoute.snapshot.params['ID']) {
-            this.KundeNr = this._avRoute.snapshot.params['ID'];
-        }
+   
 
         this.kundeForm = this._fb.group({
             Navn: ['', [Validators.required]],
@@ -36,7 +34,7 @@ export class stillSporsmalComponent {
             this._sporsmalService.SaveKunde(this.kundeForm.value)
                 .subscribe(() => {
                     // Feil navigate
-                    this._router.navigate(['/FAQ']);
+                    this._router.navigate(['/nyeSporsmal']);
                 }, error => console.error(error));
     }
 
