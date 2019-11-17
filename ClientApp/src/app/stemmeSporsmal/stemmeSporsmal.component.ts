@@ -25,8 +25,8 @@ export class stemmeSporsmalComponent {
 
     getSporsmalByNr(sporsmalNr) {
 
-        this._sporsmalService.getSporsmalById(sporsmalNr).subscribe((response: Sporsmal) => {
-            this.sporsmal = response;
+        this._sporsmalService.getSporsmalById(sporsmalNr).subscribe(
+            (response: Sporsmal) => { this.sporsmal = response;
         }, error => console.error(error));
 
     }

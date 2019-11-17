@@ -20,9 +20,9 @@ export class stillSporsmalComponent {
    
 
         this.kundeForm = this._fb.group({
-            Navn: ['', [Validators.required]],
-            Epost: ['', [Validators.required]],
-            Sporsmal: ['', [Validators.required]],
+            Navn: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(30) , Validators.pattern(/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u)]],
+            Epost: ['', [Validators.required, Validators.email]],
+            Sporsmal: ['', [Validators.required, Validators.minLength(10)]],
         })
     }
 

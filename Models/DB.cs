@@ -7,36 +7,13 @@ using System.Threading.Tasks;
 
 namespace TogbilletterOblig3.Models
 {
-    /*
-    public class DBSporsmal
-    {
-        [Key]
-        public int ID { get; set; }
-        public string sp { get; set; }
-        public int poeng { get; set; }
-        public int antallStemmer { get; set; }
-        public virtual List<DBSvar> svar { get; set; }
-    }
-
-    public class DBSvar
-    {
-        public int ID { get; set; }
-        public string svar { get; set; }
-        public int poeng { get; set; }
-        public int antallStemmer { get; set; }
-    }
-    */
 
     public class DB : DbContext
     {
         public DB(DbContextOptions options)
         : base(options) { }
 
-        //public DbSet<Kunde> Kunder { get; set; }
-        //public DbSet<Poststed> Poststeder { get; set; }
-
         public DbSet<Sporsmal> Sporsmaler { get; set; }
-        //public DbSet<SporsmalOgSvar> SporsmalOgSvar { get; set; }
         public DbSet<Kunde> Kunde { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -87,6 +64,7 @@ namespace TogbilletterOblig3.Models
 
             });
 
+            //Kunde = nye sporsmal og kontaktinfo.
             modelBuilder.Entity<Kunde>().HasData(new Kunde
             {
                 ID = 1,

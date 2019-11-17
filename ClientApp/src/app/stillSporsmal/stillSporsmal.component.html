@@ -5,7 +5,11 @@
     <div class="form-group row" >
       <div class="col-md-4">
         <div class="md-form">
-          <input type="text" id="Navn" class="form-control" placeholder="Ditt navn" formControlName="Navn" ngModel pattern="[a-zA-Z ]*" required minlength="2">
+          <input type="text" id="Navn" class="form-control" placeholder="Ditt navn" formControlName="Navn" ngModel pattern="[a-zA-Z ]*">
+          <div *ngIf="kundeForm.get('Navn').hasError('required') && kundeForm.get('Navn').touched">Dette feltet er obligatorisk.</div>
+          <div *ngIf="kundeForm.get('Navn').hasError('pattern') && kundeForm.get('Navn').touched">Ugyldig tegn brukt.</div>
+          <div *ngIf="kundeForm.get('Navn').hasError('minlength') && kundeForm.get('Navn').touched">Minimum 2 bokstaver</div>
+          <div *ngIf="kundeForm.get('Navn').hasError('maxlength') && kundeForm.get('Navn').touched">Maks 30 bokstaver</div>
         </div>
       </div>
 
@@ -15,6 +19,8 @@
       <div class="col-md-4">
         <div class="md-form">
           <input type="email" id="Epost" class="form-control" placeholder="Din epost" formControlName="Epost" ngModel email="true">
+          <div *ngIf="kundeForm.get('Epost').hasError('required') && kundeForm.get('Epost').touched">Dette feltet er obligatorisk.</div>
+          <div *ngIf="kundeForm.get('Epost').hasError('email') && kundeForm.get('Epost').touched">Feil epost-format.</div>
         </div>
       </div>
     </div>
@@ -23,6 +29,8 @@
       <div class="col-md-4">
         <div class="md-form">
           <textarea type="text" id="Sporsmal" class="form-control md-textarea" placeholder="Ditt spørsmål" formControlName="Sporsmal"></textarea>
+          <div *ngIf="kundeForm.get('Sporsmal').hasError('required') && kundeForm.get('Sporsmal').touched">Dette feltet er obligatorisk.</div>
+          <div *ngIf="kundeForm.get('Sporsmal').hasError('minlength') && kundeForm.get('Sporsmal').touched">Minimum 10 tegn</div>
         </div>
       </div>
     </div>
